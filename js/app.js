@@ -30,7 +30,7 @@ function loadData(e) {
   // console.log(title.value, type.value, year.value, network.value);
   if(network.value === 'online') {
     // console.log(`http://www.omdbapi.com/?apikey=e1f5a170&t=${title.value}&type=${type.value}&year=${year.value}&season=${season.value}`);
-    easy.getData(`http://www.omdbapi.com/?apikey=e1f5a170&t=${title.value}&type=${type.value}&year=${year.value}`)
+    easy.getData(`//www.omdbapi.com/?apikey=e1f5a170&t=${title.value}&type=${type.value}&year=${year.value}`)
     .then(data => ui.createMovieList(data));
     // list now active so storing in variable
     return;
