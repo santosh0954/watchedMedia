@@ -28,7 +28,7 @@ class UI {
   this.listChecked = document.querySelectorAll('.listChecked');
   // console.log(this.listChecked);
 }else {
-  this.showAlert('Data not found');
+  this.showAlert('Movies/Series not found');
   this.output.innerHTML = '';
   this.listChecked = document.querySelectorAll('.listChecked');
     }
