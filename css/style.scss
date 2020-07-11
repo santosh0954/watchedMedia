@@ -1,0 +1,234 @@
+/* some style for IMDB API projecs
+@author: Santosh JHa,
+ */
+ @import 'module/mixing';
+ $blue: rgb(6, 23, 73);
+ * {
+   box-sizing: border-box;
+ }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 80%;
+  font-family: montserrat, Arial, Helvetica, sans-serif;
+  background: $blue url(../img/food.png) repeat;
+  color: #333;
+
+}
+.alert {
+  position: fixed;
+  top: 75px;
+  left: 15px;
+  padding: 8px 16px;
+  color: #333;
+  opacity: 1;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  z-index: 5;
+  animation: slide 0.8s;
+  @include shadow(3px, 6px, 0.2);
+  &-danger {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  &-success {
+    background-color: #2ecc71;
+    color: #fff;
+  }
+}
+@keyframes slide {
+  from {
+    opacity: 0;
+    top: 60px;
+  }
+  to {
+    opacity: 1;
+    top: 75px;
+  }
+}
+nav {
+  background-color: #ffffff;;
+  padding: 15px;
+  box-shadow: inset 0 -4px 8px rgba($color: #000000, $alpha: 0.2), inset 0 -6px 10px rgba($color: #000000, $alpha: 0.1);
+  .brand-logo a {
+    color: #B19D79;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px 2px 2px 4px;
+    text-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.2);
+    border: 1px solid $blue;
+    box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.2);
+    span {
+      background-color: $blue;
+      color: #fff;
+      display: inline-block;
+      padding: 5px;
+    }
+  }
+}
+small {
+  color: #aaa;
+  font-weight: normal;
+}
+.container {
+  width: auto;
+  max-width: 1100px;
+  padding: 30px;
+  margin: 50px 50px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.2);
+  @include screen(1100px) {
+    margin: 50px auto;
+
+  }
+}
+h1, h2 {
+  background: $blue;
+  color: #fff;
+  margin: 0;
+  padding:  10px;
+}
+.banner {
+  display: block;
+  max-width: 100%;
+  // width: 100px;
+  // height: 210px;
+  margin: 0 auto;
+}
+.search form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  justify-content: space-between;
+  @media only scree and (min-width) {
+    
+  }
+  
+  .input,select,#searchBtn {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    box-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.1);
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: inherit;
+    @media only screen and (min-width: 800px) {
+      width: calc(100% / 5);
+    }
+    &:not(:first-child) {
+      border-left: none;
+    }
+    
+  }
+  #searchBtn {
+    background-color: $blue;
+    color: #fff;
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: $blue + 40;
+      font-stretch: wider;
+    }
+  }
+}
+  hr {
+    margin: 10px 0 20px;
+    border: 1px solid #ddd;
+  }
+  .row {
+    .col-3,.col-9 {
+      float: left;
+
+    }
+    .col-3 {
+      width: 100%;
+      margin-bottom: 10px;
+      background-color: #f1f1f1;
+      @include screen(832px) {
+        width: 30%;
+        margin-bottom: 0;
+        
+      }
+          @include screen(1192px) {
+            width: 20%;
+      
+          }
+    }
+    .col-9 {
+      width: 100%;
+      .body {
+        padding: 0 15px;
+      }
+      @include screen(832px) {
+        width: 70%;
+        margin-bottom: 0;
+        
+      }
+      @include screen(1192px) {
+        width: 80%;
+
+      }
+    }
+    &::after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+    
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    position: relative;
+    border: 1px solid #ddd;
+    // height: 200px;
+    margin-bottom: 20px;
+    @include shadow(2px, 4px, 0.1);
+    
+  }
+  .listChecked {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+  }
+  .submitLocal {
+    input, button {
+      padding: 8px 10px;
+      margin: 12px;
+      border: 1px solid #ddd;
+      font-family: inherit;
+      outline: none;
+    }
+    button {
+      background-color: $blue;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      font-family: inherit;
+      cursor: pointer;
+      @include shadow(2px, 4px, 0.18);
+      &:hover {
+        background-color: $blue + 50;
+      }
+    }
+  }
+
+
+  footer {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgba($color: $blue, $alpha: 1.0);
+    padding: 15px;
+    margin-top: 50px;
+  }
