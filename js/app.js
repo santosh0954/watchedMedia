@@ -76,14 +76,16 @@ function sendData(e) {
   // console.log(listChecked);
 watched.addEventListener('change', function() {
   // console.log(typeof ui.getList() === 'undefined');
+  let listCheckedCount = 0;
   if(typeof ui.getList() === 'undefined' ){
     ui.showAlert('No Media to select');
     this.checked = false;
-  }else if (ui.getList().length === 0) {
-    ui.showAlert('No Media to select');
-    this.checked = false;
-  
-  }else if(this.checked) {
+  }else if (ui.getList.length > 0) {
+    ui.getList().forEach(list => list.checked ? listCheckedCount++ : listCheckedCount)=== 0;
+    if(listCheckedCount === 0) {
+      ui.showAlert('No Media Selected');
+      this.checked = false;
+    }else if(this.checked) {
     this.checked = true;
     watching.setAttribute('disabled', true);
     watching.type = 'text';
@@ -94,5 +96,6 @@ watched.addEventListener('change', function() {
     watching.value = '';
     watching.removeAttribute('disabled');
   }
+}
 });
  
