@@ -4,9 +4,11 @@ class UI {
   }
   createMovieList(data) {
     // console.log(data);
-    if(data.Response === 'True') {
+    // console.log(data.totalSeasons);
+      // console.log(data.Title, data.imdbId, data.Year, data.Type);
+ 
     data.totalSeasons === undefined ? data.totalSeasons = 1 : data.totalSeasons;
-    this.output.innerHTML = `<li>
+    this.output.innerHTML += `<li>
     <input type="checkbox" class="listChecked">
     <div class="row">
       <div class="col-3">
@@ -27,12 +29,8 @@ class UI {
   </li>`;
   this.listChecked = document.querySelectorAll('.listChecked');
   // console.log(this.listChecked);
-}else {
-  this.showAlert('Movies/Series not found');
-  this.output.innerHTML = '';
-  this.listChecked = document.querySelectorAll('.listChecked');
-    }
-  }
+
+}
   // get checked list 
   getList(listChecked) {
     return this.listChecked;
@@ -48,5 +46,10 @@ class UI {
     setTimeout(()=> {
       alert.remove();
     }, 3000);
+  }
+  clearList() {
+    while(this.output.firstChild) {
+      this.output.firstChild.remove();
+    }
   }
 }
